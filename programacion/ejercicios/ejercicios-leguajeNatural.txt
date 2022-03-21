@@ -1,0 +1,27 @@
+Sumar los números de 1 al 10:
+
+Programa: SumNum
+Módulo: Main
+Variables: a: entero 
+Variables: b: entero
+
+Inicio
+
+leer a = 0;
+leer b = 1;
+
+mientra b<=10 hacer
+ Calcular/Sumar a= a+b
+ Calcular/Sumar b= b+1
+fin Mientras
+Visualiza "La suma es:", a
+repetir
+ //Calcular/Sumar a= a+b
+ //Calcular/Sumar b= b+1
+ //Mientras b<=10
+
+Fin
+
+/-------------------------------------------------------/
+
+factorial! = n(n-1)....

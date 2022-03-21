@@ -1,0 +1,25 @@
+package misPruebas;
+
+public class PruebaAlumnos {
+   public static void main (String[] args) {
+	   Alumno unAlumno = new Alumno(1234, "Pepe", new Fecha(17,12,2002));
+	   Fecha fechaHoy = new Fecha(16,12,2021);
+	   System.out.println("Edad de " + unAlumno.getNombre() + " - " + fechaHoy.agnos(unAlumno.getFechaNacto()));
+	   System.out.println("hoy es " + fechaHoy.escribirFecha());
+	   System.out.println("----------------");
+	   System.out.println("hoy es " + fechaHoy);
+   }
+}
+
+
+
+
+
+
+
+
+
+Edad de Pepe - 18
+hoy es 16 de diciembre de 2021
+----------------
+hoy es 16 de diciembre de 2021

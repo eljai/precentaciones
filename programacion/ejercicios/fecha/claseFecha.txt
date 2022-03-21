@@ -1,0 +1,50 @@
+package misPruebas;
+
+public class Fecha {
+	private int dia;
+	private int mes;
+	private int agno;
+	
+	public Fecha () {
+		dia = 1;
+		mes = 1;
+		agno = 2000;
+	}
+
+	public Fecha (int dia, int mes, int agno) {
+		this.dia = dia;
+		this.mes = mes;
+		this.agno = agno;
+	}
+	
+	public int getDia() {
+		return dia;
+	}
+	
+	public int getMes() {
+		return mes;
+	}
+	
+	public int getAgno() {
+		return agno;
+	}
+	
+	public int agnos(Fecha unaFecha) {
+		if (((mes > unaFecha.getMes()) || (mes == unaFecha.getMes() && dia >= unaFecha.getDia())))
+		     return agno - unaFecha.getAgno();
+		else 
+             return agno - unaFecha.getAgno() - 1;
+	}	
+	
+	public String escribirFecha() {
+		String cadena = "";
+		String[] meses = {"","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"};
+		cadena = cadena + dia + " de " + meses[mes] +  " de " + agno;
+		return cadena;
+	}
+	
+ @Override public String toString() {
+	 String[] meses = {"","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"}; 
+     return dia + " de " + meses[mes] +  " de " + agno;
+ }
+}

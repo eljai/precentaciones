@@ -1,0 +1,7 @@
+guardar con el apellido y Nombre 
+MorochoJairo
+contener:
+1. Programa ejecutable.
+2. Documento .txt con el codigo fuente.
+3. Documento .doc con la documentación de las pruebas de la aplicación/ o trabajos extras.
+4. 

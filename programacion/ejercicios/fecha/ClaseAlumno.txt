@@ -1,0 +1,25 @@
+package misPruebas;
+
+public class Alumno {
+	private int expte;
+	private String nombre;
+	private Fecha fechaNacto;
+	
+	public Alumno(int expte, String nombre, Fecha fechaNacto) {
+		this.expte = expte;
+		this.nombre = nombre;
+		this.fechaNacto = fechaNacto;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public Fecha getFechaNacto() {
+		return fechaNacto;
+	}
+	
+	
+	
+
+}

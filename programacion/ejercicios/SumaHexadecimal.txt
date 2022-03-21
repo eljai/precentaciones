@@ -1,0 +1,69 @@
+package misPruebas;
+import javax.swing.*;
+
+public class SumarHexadecimal {
+   public static void main(String[] args) {
+	   //Variables del programa
+	   String numHex1, numHex2 = " ", resHex;
+	   String digitos = "0123456789ABCDEF";
+	   String resulSalida;
+	   int posNum1, posNum2, i, suma;
+	   int llevada = 0;
+	   boolean correcto;
+	   do {
+		 correcto = true;
+	     numHex1 = JOptionPane.showInputDialog(null,"Introduce num Hex");
+	     for (i = 0; i < numHex1.length(); i++)
+	     {
+	      if  (digitos.indexOf(numHex1.charAt(i)) == -1)
+	     	  correcto = false;
+	     }
+	   }while(!correcto);
+	   posNum1 = numHex1.length() -1;
+	   //JOptionPane.showMessageDialog(null, numHex1 + " posicion " + posNum1);
+	     
+	   i = 0;
+	   do {
+		 correcto = true; 
+		 i = 0;
+	     numHex2 = JOptionPane.showInputDialog(null,"Introduce otro Hex");
+	     while(correcto && (i < numHex2.length())) {
+	       if (digitos.indexOf(numHex2.charAt(i)) == -1)
+	    	   correcto = false;
+	       i++;
+	     }
+	   }while (!correcto);
+	   posNum2 = numHex2.length() - 1;
+	   resHex = "";
+	   System.out.println(posNum1 + " - " + posNum2);
+	   //Sumamos digito a digito
+       while ((posNum1 >= 0) && (posNum2 >= 0)) {
+	      suma = digitos.indexOf(numHex1.charAt(posNum1)) + digitos.indexOf(numHex2.charAt(posNum2)) + llevada;
+	      resHex = digitos.charAt(suma % 16) + resHex;
+	      llevada = suma / 16;  
+	      posNum1--;
+	      posNum2--;
+       }
+       //Aun nos quedan digitos en el primer numero
+       while(posNum1 >=  0) {
+    	  suma = digitos.indexOf(numHex1.charAt(posNum1)) + llevada;
+ 	      resHex = digitos.charAt(suma % 16) + resHex;
+ 	      llevada = suma / 16;  
+ 	      posNum1--;
+       }
+       //Aun nos quedan digitos en el segundo numero
+       while(posNum2 >=  0) {
+    	  suma = digitos.indexOf(numHex2.charAt(posNum2)) + llevada;
+ 	      resHex = digitos.charAt(suma % 16) + resHex;
+ 	      llevada = suma / 16;  
+ 	      posNum2--;
+       }
+       //La posible llevada final
+       if (llevada != 0)
+          resHex = digitos.charAt(llevada) + resHex;
+       resulSalida = "El resultado de sumar en hexadecimal\n";
+       resulSalida = resulSalida + numHex1 + "\n" + numHex2;
+       resulSalida = resulSalida + "\n--------------\n" + resHex;
+       JOptionPane.showMessageDialog(null, resulSalida);
+   }
+}
